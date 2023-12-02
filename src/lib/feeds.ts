@@ -6,7 +6,7 @@ import Feed, { FeedConfig } from "./feed";
 
 const log = logger("feeds");
 
-const FEEDS_FILE = "./feeds.json";
+const FEEDS_FILES = ["./feeds.json", "./feeds.example.json", "/feeds.json"];
 
 export class Feeds {
   private feeds: FeedConfig[];
@@ -15,12 +15,18 @@ export class Feeds {
   constructor() {
     this.parser = new Parser();
 
-    // Check if FEEDS_FILE exists
-    if (!existsSync(FEEDS_FILE)) {
-      throw new Error(`"${FEEDS_FILE}" does not exist`);
+    let file: string | undefined;
+    for (const f of FEEDS_FILES) {
+      if (existsSync(f)) {
+        file = readFileSync(f, { encoding: "utf-8" });
+        break;
+      }
     }
 
-    const file = readFileSync(FEEDS_FILE, { encoding: "utf-8" });
+    if (!file) {
+      throw new Error("Could not find a feed file");
+    }
+
     this.feeds = JSON.parse(file);
 
     log(`Loaded ${this.feeds.length} feeds`);

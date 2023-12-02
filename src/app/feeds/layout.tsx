@@ -9,7 +9,7 @@ export default function DashboardLayout({
   const allFeeds = feeds.getAvailableFeeds();
   return (
     <section className="flex h-full">
-      <nav className="flex-none w-48 border-r border-zinc-700 bg-zinc-900">
+      <nav className="flex-none w-48 border-r border-zinc-700 bg-zinc-900 overflow-auto">
         <ul>
           {allFeeds.map((feed) => (
             <li key={feed.id}>

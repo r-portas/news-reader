@@ -4,6 +4,7 @@ import "./globals.css";
 
 const font = IBM_Plex_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {

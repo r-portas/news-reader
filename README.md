@@ -14,8 +14,9 @@ application that hits real APIs (RSS feeds).
 
 ## TODO
 
-- [ ] Load config for `.env` file
-- [ ] Support for reading an individual RSS feed
+- [X] Support for reading an individual RSS feed
+- [X] Basic styling
+- [X] Dockerfile and docker-compose
 - [ ] Simple Github build/lint pipeline
 - [ ] Storybook
 - [ ] Keyboard shortcuts, VIM keybindings

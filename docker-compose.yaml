@@ -1,0 +1,7 @@
+services:
+  news-reader:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./feeds.json:/feeds.json
