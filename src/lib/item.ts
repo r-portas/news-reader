@@ -1,0 +1,24 @@
+import { Item as IItem } from "rss-parser";
+
+export default class Item {
+  public id?: string;
+  public title?: string;
+  public summary?: string;
+  public previewImage?: string;
+  public published?: Date;
+  public categories: string[];
+  public link?: string;
+
+  constructor(raw: IItem) {
+    this.id = raw.guid;
+    this.title = raw.title;
+    this.summary = raw.contentSnippet;
+    this.categories = raw.categories || [];
+    this.link = raw.link;
+    this.previewImage = raw.enclosure?.url;
+
+    if (raw.isoDate) {
+      this.published = new Date(raw.isoDate);
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = IBM_Plex_Mono({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "News Reader",
@@ -14,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`antialiased bg-zinc-900 text-white ${inter.className}`}>
+    <html lang="en" className="h-full">
+      <body
+        className={`h-full antialiased bg-zinc-950 text-white ${font.className}`}
+      >
         {children}
       </body>
     </html>

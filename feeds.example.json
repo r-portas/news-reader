@@ -1,0 +1,17 @@
+[
+  {
+    "id": "abc",
+    "displayName": "ABC News",
+    "url": "https://www.abc.net.au/news/feed/51120/rss.xml"
+  },
+  {
+    "id": "the-guardian",
+    "displayName": "The Guardian",
+    "url": "https://www.theguardian.com/au/rss"
+  },
+  {
+    "id": "bbc",
+    "displayName": "BBC Top Stories",
+    "url": "http://feeds.bbci.co.uk/news/rss.xml#"
+  }
+]
