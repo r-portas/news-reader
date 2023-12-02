@@ -1,5 +1,5 @@
 import feeds from "@/lib/feeds";
-import Link from "./Link";
+import Link from "@/components/Link";
 
 export default function DashboardLayout({
   children,
@@ -8,8 +8,8 @@ export default function DashboardLayout({
 }) {
   const allFeeds = feeds.getAvailableFeeds();
   return (
-    <section className="flex h-full">
-      <nav className="flex-none w-48 border-r border-zinc-700 bg-zinc-900 overflow-auto">
+    <section className="flex">
+      <nav className="flex-none w-48 border-r border-zinc-700 bg-zinc-900">
         <ul>
           {allFeeds.map((feed) => (
             <li key={feed.id}>
@@ -19,7 +19,7 @@ export default function DashboardLayout({
         </ul>
       </nav>
 
-      <div className="flex-auto overflow-auto">{children}</div>
+      <div className="flex-auto">{children}</div>
     </section>
   );
 }

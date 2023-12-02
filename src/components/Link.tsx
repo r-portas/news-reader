@@ -9,7 +9,7 @@ interface LinkProps {
 
 export default function Link({ href, children }: LinkProps) {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive = pathname.startsWith(href);
   return (
     <div className={`p-2 ${isActive ? "bg-yellow-400 text-black" : undefined}`}>
       <NextLink href={href} className="uppercase">

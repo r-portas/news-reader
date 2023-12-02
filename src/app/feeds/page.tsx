@@ -1,3 +1,3 @@
 export default function Feed() {
-  return <p>Choose a feed from the side</p>;
+  return <p className="p-2">Choose a feed from the side</p>;
 }
