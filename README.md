@@ -17,7 +17,8 @@ application that hits real APIs (RSS feeds).
 - [X] Support for reading an individual RSS feed
 - [X] Basic styling
 - [X] Dockerfile and docker-compose
-- [ ] Simple Github build/lint pipeline
+- [X] Simple Github build/lint pipeline
+- [X] Ways to debug
 - [ ] Storybook
 - [ ] Keyboard shortcuts, VIM keybindings
   - Look at examples like Fey app
