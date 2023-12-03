@@ -1,6 +1,9 @@
 import feeds from "@/lib/feeds";
 import Link from "@/components/Link";
 
+// Don't statically render
+export const dynamic = "force-dynamic";
+
 export default function DashboardLayout({
   children,
 }: {
