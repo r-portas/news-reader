@@ -13,13 +13,34 @@ export interface ParsedFeed extends Output<IItem> {
 }
 
 export default class Feed {
+  /**
+   * The display name of the feed
+   */
   public displayName: string;
+
+  /**
+   * The logo of the publisher
+   */
   public logo?: string;
+
+  /**
+   * The time the feed was published
+   */
   public published?: Date;
+
+  /**
+   * The time the feed was fetched
+   */
+  public fetched: Date;
+
+  /**
+   * The items in the feed
+   */
   public items: Item[];
 
   constructor(result: ParsedFeed, config: FeedConfig) {
     this.displayName = config.displayName;
+    this.fetched = new Date();
     if (result.lastBuildDate) {
       this.published = new Date(result.lastBuildDate);
     }

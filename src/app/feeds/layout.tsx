@@ -11,9 +11,9 @@ export default function DashboardLayout({
 }) {
   const allFeeds = feeds.getAvailableFeeds();
   return (
-    <section className="flex">
-      <nav className="flex-none w-48 border-r border-zinc-700 bg-zinc-900">
-        <ul>
+    <section className="flex flex-col lg:flex-row">
+      <nav className="flex-none lg:w-48 lg:border-r border-zinc-700 bg-zinc-900">
+        <ul className="flex flex-row lg:flex-col overflow-scroll">
           {allFeeds.map((feed) => (
             <li key={feed.id}>
               <Link href={`/feeds/${feed.id}`}>{feed.displayName}</Link>
