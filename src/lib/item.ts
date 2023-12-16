@@ -13,7 +13,22 @@ export default class Item {
     this.id = raw.guid;
     this.title = raw.title;
     this.summary = raw.contentSnippet;
-    this.categories = raw.categories || [];
+    this.categories = [];
+    if (raw.categories) {
+      for (const category of raw.categories) {
+        switch (typeof category) {
+          case "string":
+            this.categories.push(category);
+            break;
+          case "object":
+            // The Guardian's categories are objects with a "_" key
+            if (category["_"]) {
+              this.categories.push(category["_"]);
+            }
+            break;
+        }
+      }
+    }
     this.link = raw.link;
     this.previewImage = raw.enclosure?.url;
 

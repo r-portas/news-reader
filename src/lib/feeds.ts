@@ -1,7 +1,6 @@
 import { readFileSync, existsSync } from "fs";
 import Parser from "rss-parser";
 import logger from "./logger";
-import Item from "./item";
 import Feed, { FeedConfig } from "./feed";
 
 const log = logger("feeds");
